@@ -1,6 +1,7 @@
 ---
 - name: Check Web Servers
-- hosts: web
+  hosts: web
   gather_facts: false
+  
   tasks:
-    - ping:
+  - action: ping
