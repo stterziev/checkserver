@@ -18,7 +18,7 @@
             to: Stanislav Terziev <s.terziev@ibs.bg>
             subject: Ansible-report
             body: '{{ inventory_hostname }} not connected. End of host.'
-          delegate_to: localhost
+          delegate_to: 192.168.11.1
 
     - debug:
         msg: "{{ inventory_hostname }} is running"
@@ -29,5 +29,5 @@
         to: Stanislav Terziev <s.terziev@ibs.bg>
         subject: Ansible-report
         body: '{{ inventory_hostname }} is running'
-      delegate_to: localhost
+      delegate_to: 192.168.11.1
     - setup:
