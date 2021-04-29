@@ -10,7 +10,21 @@
             msg: "{{ inventory_hostname }} not connected. End of host."
         - meta: clear_host_errors
         - meta: end_host
+        - mail: host: mail.ibs.bg
+            port: 25
+            from: Stanislav Terziev <s.terziev@ibs.bg>
+            to: Stanislav Terziev <s.terziev@ibs.bg>
+            subject: Ansible-report
+            body: '{{ inventory_hostname }} not connected. End of host.'
+          delegate_to: localhost
 
     - debug:
         msg: "{{ inventory_hostname }} is running"
+    - mail: host: mail.ibs.bg
+            port: 25
+            from: Stanislav Terziev <s.terziev@ibs.bg>
+            to: Stanislav Terziev <s.terziev@ibs.bg>
+            subject: Ansible-report
+            body: '{{ inventory_hostname }} is running'
+          delegate_to: localhost
     - setup:
