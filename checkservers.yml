@@ -1,5 +1,6 @@
-- hosts:
-    - web
+---
+- name: Check Web Servers
+- hosts: web
+  gather_facts: false
   tasks:
-    - name: ping web servers
-      action: ping
+    - ping:
